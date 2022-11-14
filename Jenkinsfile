@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    tools {
+        gradle '7.6-rc-3'
+    }
     stages {
         stage("run frontend") {
             steps {
@@ -13,9 +15,7 @@ pipeline {
         stage("run backend") {
             steps {
                 echo 'executing gradle...'
-                withGradle() {
-                    sh 'gradle --version'
-                }
+                sh 'gradle --version'              
             }
         }
     }
