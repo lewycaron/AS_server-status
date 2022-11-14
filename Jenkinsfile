@@ -2,6 +2,10 @@
 pipeline {
     agent any
 
+    tools {
+        gradle '7.6-rc-3'
+    }
+
     stages {
         stage('run frontend') {
             steps {
