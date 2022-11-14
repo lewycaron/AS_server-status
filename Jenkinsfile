@@ -1,12 +1,9 @@
+/* groovylint-disable-next-line CompileStatic */
 pipeline {
     agent any
-    tools {
-        gradle '7.6-rc-3'
-        maven '3.8.6'
-    }
-    stages {
-        stage("run frontend") {
 
+    stages {
+        stage('run frontend') {
             steps {
                 echo 'excuting yarn...'
                 nodejs('Node-19') {
@@ -14,10 +11,10 @@ pipeline {
                 }
             }
         }
-        stage("run backend") {
+        stage('run backend') {
             steps {
                 echo 'executing gradle...'
-                sh 'gradle --version'              
+                sh 'gradle --version'
             }
         }
     }
