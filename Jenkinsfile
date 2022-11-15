@@ -15,6 +15,11 @@ pipeline {
                 }
             }
         }
+        stage('Aws') {
+            steps {
+                sh 'aws --version'
+            }
+        }
         stage('run backend') {
             steps {
                 echo 'executing gradle...'
