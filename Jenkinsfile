@@ -4,7 +4,6 @@ pipeline {
 
     tools {
         gradle '7.6-rc-3'
-        aws-cli ''
     }
 
     stages {
