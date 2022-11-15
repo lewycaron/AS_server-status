@@ -4,6 +4,7 @@ pipeline {
 
     tools {
         gradle '7.6-rc-3'
+        aws-cli ''
     }
 
     stages {
@@ -23,7 +24,7 @@ pipeline {
         }
         stage('Aws') {
             steps {
-                sh 'aws run --rm -it amazon/aws-cli command'
+                sh './aws/install'
                 sh 'aws --version'
             }
         }
