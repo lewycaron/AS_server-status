@@ -23,6 +23,7 @@ pipeline {
         }
         stage('Aws') {
             steps {
+                sh 'aws run --rm -it amazon/aws-cli command'
                 sh 'aws --version'
             }
         }
