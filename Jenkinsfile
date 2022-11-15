@@ -7,7 +7,7 @@ pipeline {
     }
 
     stages {
-        stage('run frontend') {
+        stage('run frontend'){
             steps {
                 echo 'excuting yarn...'
                 nodejs('Node-19') {
